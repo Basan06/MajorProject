@@ -3,10 +3,46 @@
 {% block body %}
 <style>
 	.about {
-		background-image: url("{% static 'images/heartimage.jpg' %}");
-		background-size: fill;
+		background-image: url("{% static 'images/about.mp4' %}");
+		background-size: cover;
 		background-position: center;
 	}
+	.title-section h3 {
+		color: #000000; 
+	}
+
+	.subheading-w3ls {
+		color: #e70c0c; 
+	}
+
+	p {
+		color: #fcfcfc; 
+	}
+	.rnd-section {
+		margin-top: 40px;
+	}
+
+	.rnd-section h4 {
+		margin-bottom: 10px;
+		color :#fa0202
+	}
+	.testimonial {
+		margin-top: 40px;
+	}
+
+	.testimonial .quote {
+		font-style: italic;
+		margin-bottom: 10px;
+		color: #f6f4f4;
+	}
+
+	.testimonial .author {
+		font-weight: bold;
+		color: #fa0202;
+
+	}
+
+
 </style>
 <section class="about py-5">
 	<div class="container py-xl-5 py-lg-3">
@@ -27,6 +63,16 @@
 				Our website is designed to assist users in evaluating their risk of heart disease through an easy-to-use and intuitive interface. By leveraging the power of advanced algorithms and machine learning techniques, we analyze various risk factors and medical information to generate personalized predictions.</p>
 		</div>
 
+		<div class="testimonial">
+		<div class="quote">"The heart disease prediction system has been a game-changer for me. It helped me identify potential risks and take necessary actions to improve my cardiovascular health."</div>
+		<div class="author">John Doe</div>
+	    </div>
+
+
+		<div class="rnd-section">
+			<h4>Research and Development</h4>
+			<p>We are committed to continuous improvement and innovation. Our team of experts is constantly researching and developing new techniques to enhance the accuracy and effectiveness of our prediction system. We stay up-to-date with the latest advancements in cardiovascular health research to provide you with the most reliable predictions.</p>
+		</div>
 
 	</div>
 	</div>

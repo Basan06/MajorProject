@@ -2,13 +2,22 @@
 {% load static %}
 {% block body %}
 
+
+<style>
+	.logins {
+		background-image: url("{% static 'images/adminlogin.mp4' %}");
+		background-size: fill;
+		background-position: center;
+	}
+</style>
+
 	<section class="logins py-5">
 		<div class="container py-xl-5 py-lg-3">
 			<div class="title-section mb-md-5 mb-4">
 				<h6 class="w3ls-title-sub"></h6>
 				<br><br>
 				<center>
-				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Login</h3>
+				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Admin Login</h3>
 				</center>
 			</div><hr/>
 			<div class="login px-sm-4 mx-auto mw-100 login-wrapper">

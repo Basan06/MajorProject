@@ -47,6 +47,13 @@
                                   <td>{{i.user.email}}</td>
                                   <td>{{i.contact}}</td>
                                   <td>{{i.address}}</td>
+                                  <td>
+                                    <form action="{ % url 'assign_status' pid=i.id % }" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="doctor_id" value="{{ i.id }}">
+                                        <button type="submit" class="btn btn-primary">Assign</button>
+                                    </form>
+                                </td>
                               </tr>
                               {% empty %}
                               <tr>
@@ -55,9 +62,15 @@
                               {% endfor %}
                           </tbody>
                       </table>
-                  </div>
-            {% endif %}
-		</div>
-	</section>
-
-{% endblock %}
+                      {% if terror %}
+                      <script>
+                          alert('Assigned Status successfully');
+                          window.location = "{% url 'view_doctor' %}";
+                      </script>
+                  {% endif %}
+              </div>
+          {% endif %}
+      </div>
+  </section>
+  
+  {% endblock %}

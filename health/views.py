@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Doctor
+from . import views
 def add_doctor(request):
     if request.method == 'POST':
         # Extract form data
@@ -59,6 +60,9 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from django.http import HttpResponse
 # Create your views here.
+
+def index(request):
+    return render(request, 'index.html')
 
 def Home(request):
     return render(request,'carousel.html')

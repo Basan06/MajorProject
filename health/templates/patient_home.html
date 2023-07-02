@@ -2,18 +2,55 @@
 {% load static %}
 {% block body %}
 
-<div class="container-fluid" style="margin-top:100px;margin-bottom:2%;width:100%">
-    <h2 align="center" style="font-weight:bold;font-family:roman">PATIENT DASHBORAD</h2><hr/>
-    <br>
-    <center>
-    <h1>Welcome to the Patient Dashboard. </h1>
-    <div style="height: 0; padding-bottom: calc(52.02%); position:relative; width: 80%; height: 250px;"><iframe
-            allow="autoplay; gyroscope;" allowfullscreen height="100%" referrerpolicy="strict-origin"
-            src="https://www.kapwing.com/e/61bce88b1427a3003e13e657"
-            style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%; border: 5px solid grey;"
-            title="Embedded content made on Kapwing" width="100%"></iframe></div>
-    </center>
-</div>
-
-
+	<!-- register -->
+    {% if error == "create" %}
+    <script>
+        alert('Disease Updated Successfully');
+        window.location="{% url 'view_disease' %}";
+    </script>
+    {% endif %}
+    
+    
+        <section class="logins py-5">
+            <div class="container py-xl-5 py-lg-3">
+                <div class="title-section mb-md-5 mb-4">
+                    <h6 class="w3ls-title-sub"></h6>
+                    <h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Update Disease</h3>
+                </div><hr/>
+                <div class="login px-sm-12" style="width:100%">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                            <label>Disease Name</label>
+                            <input type="text" class="form-control" value="{{doc.name}}" name="d_name" placeholder="Disease Name" required="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                            <label>Write Symptom Of Disease (Seperated by ",")</label>
+                            <textarea class="form-control" name="sym" required="">{{doc.symptom}}
+                            </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                            <label>Type of Disease</label>
+                            <select class="form-control" name="type" required="">
+                            {% for i in type  %}
+                            {% if i.name == doc.type.name %}
+                            <option value="{{i.name}}" selected>{{i.name}}</option>
+                                {% else %}
+                            <option value="{{i.name}}">{{i.name}}</option>
+                                {% endif %}
+                            {% endfor %}
+                            </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn submit mt-4">Register Disease</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- //register -->
 {% endblock %}

@@ -42,6 +42,7 @@ urlpatterns = [
     # path('prdict_heart_disease', prdict_heart_disease,name="prdict_heart_disease"),
     path('add_heartdetail', add_heartdetail,name="add_heartdetail"),
     path('view_search_pat', view_search_pat,name="view_search_pat"),
+    path('index.html', index, name='index'),
 
     path('view_doctor', View_Doctor,name="view_doctor"),
     path('add_doctor', add_doctor,name="add_doctor"),
@@ -54,7 +55,7 @@ urlpatterns = [
 
     path('delete_searched/<int:pid>', delete_searched, name="delete_searched"),
     path('delete_doctor<int:pid>', delete_doctor, name="delete_doctor"),
-    path('assign_status<int:pid>', assign_status, name="assign_status"),
+    path('assign_status/<int:pid>/', views.assign_status, name="assign_status"),
     path('delete_patient<int:pid>', delete_patient, name="delete_patient"),
     path('delete_feedback<int:pid>', delete_feedback, name="delete_feedback"),
     path('predict_desease/<str:pred>/<str:accuracy>/', predict_desease, name="predict_desease"),
